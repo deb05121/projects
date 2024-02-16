@@ -1,8 +1,12 @@
 package evaluator;
 
-public class Card {
+public class Card implements Comparable<Card> {
     private CardColour cardColour;
     private CardValue cardValue;
+
+    public Card() {
+
+    }
 
     public CardColour getCardColour() {
         return cardColour;
@@ -20,8 +24,16 @@ public class Card {
     @Override
     public String toString() {
         return "Card{" +
-            "cardColour=" + cardColour +
-            ", cardValue=" + cardValue +
-            '}';
+                "cardColour=" + cardColour +
+                ", cardValue=" + cardValue +
+                '}';
+    }
+
+    @Override
+    public int compareTo(Card other) {
+        if (this.cardValue.ordinal() != other.cardValue.ordinal()) {
+            return this.cardValue.compareTo(other.cardValue);
+        }
+        return 0;
     }
 }
