@@ -23,7 +23,7 @@ public class Card implements Comparable<Card> {
 
     @Override
     public String toString() {
-        return "Card{" +
+        return "\n" + "Card{" +
                 "cardColour=" + cardColour +
                 ", cardValue=" + cardValue +
                 '}';

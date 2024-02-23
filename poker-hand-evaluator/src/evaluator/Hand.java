@@ -10,17 +10,8 @@ import static evaluator.HandValue.PAIR;
 public class Hand implements Comparable<Hand> {
     private List<Card> cards;
     private HandValue handValue;
-
-
-    //jó lenne sorban tárolnunk őket (közvetlenül egymás után jönnek-e)
-
-    //jó lenne megnéznünk gyorsan, hogy minden szín azonos-e
-
-    //jó lenne valami struktúrában a párokat (pár, két pár, drill, full house, poker) hatékonyan keresni
-    //tudom, hogy hányas értékből mennyi van
-
-    private Map<CardValue, Integer> cardFrequencies = new HashMap<>();
     private boolean isFlush;
+    private Map<CardValue, Integer> cardFrequencies = new HashMap<>();
 
     public List<Card> getCards() {
         return cards;
@@ -44,8 +35,7 @@ public class Hand implements Comparable<Hand> {
         setCardFrequencyMap();
         this.cards.sort(new CardComparator(this));
         setIsFlush();
-        //sort
-        //do things with colours?
+
         evaluateHand();
     }
 
@@ -185,11 +175,8 @@ public class Hand implements Comparable<Hand> {
             System.out.printf("compareto result: %s%n", this.handValue.compareTo(other.handValue));
             return this.handValue.compareTo(other.handValue);
         }
-
         //straight: only the first one
         //straight flush: only the first one
-
-        //FIXME: decide which hand with similar hand value is better
         //pair, two pair (!), 3, full house, poker --> fogom a legnagyobb frequency-jű
         //struktúrát, azokat komparálom, aztán haladok a kisebbek felé
 
@@ -204,7 +191,6 @@ public class Hand implements Comparable<Hand> {
                 return 1;
             }
         }
-
         return 0;
     }
 }

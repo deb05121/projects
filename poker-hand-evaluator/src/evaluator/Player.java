@@ -4,17 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
-
-
+    private String name;
     private List<Card> playCardList;
 
-    public Player() {
 
+    public Player(String name) {
+        this.name = name;
         this.playCardList = new ArrayList<>();
     }
 
-    public void setStarting(List<Card> starting) {
+    public List<Card> getPlayCardList() {
+        return playCardList;
+    }
 
+    public void setStarting(List<Card> starting) {
         setPlayCardList(starting);
     }
 
@@ -37,7 +40,7 @@ public class Player {
 
     @Override
     public String toString() {
-        return "Player{" +
+        return this.name+ "{" +
                 "playCardList=" + playCardList +
                 '}';
     }
