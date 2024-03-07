@@ -6,15 +6,11 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class DeckOfCards {
-    private List<Card> deck;
-    private Map<Integer, Card> deckOfPlay;
-    private List<Card> playCards;
-    private Integer index;
-
+    private final List<Card> playCards;
 
     public DeckOfCards() {
-        this.deck = new ArrayList<>();
-        this.deckOfPlay = new TreeMap<>();
+        List<Card> deck = new ArrayList<>();
+        Map<Integer, Card> deckOfPlay = new TreeMap<>();
         this.playCards = new ArrayList<>();
         //original deck
         for (CardColour cardColour : CardColour.values()) {
@@ -40,20 +36,7 @@ public class DeckOfCards {
         for (Integer key : deckOfPlay.keySet()) {
             playCards.add(deckOfPlay.get(key));
         }
-        System.out.println(playCards.size());
-        int spades = 0;
-        int diamonds = 0;
-        int clubs = 0;
-        int hearts = 0;
-        for (Card card : playCards) {
-            switch (card.getCardColour()) {
-                case CLUBS -> clubs++;
-                case HEARTS -> hearts++;
-                case SPADES -> spades++;
-                case DIAMONDS -> diamonds++;
-            }
-        }
-        System.out.printf("%d, %d, %d, %d \n", clubs, hearts, spades, diamonds);
+        //System.out.println(playCards.size());
     }
 
     public Card getFirstCardOfDeck() {
@@ -69,7 +52,7 @@ public class DeckOfCards {
 
     @Override
     public String toString() {
-        return "playCards{" +
+        return "\nplayCards{" +
                 "deck=" + playCards +
                 '}';
     }

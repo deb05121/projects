@@ -4,44 +4,49 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
-    private String name;
-    private List<Card> playCardList;
+    private final String name;
+    private final List<Card> playerCardList;
 
 
     public Player(String name) {
         this.name = name;
-        this.playCardList = new ArrayList<>();
+        this.playerCardList = new ArrayList<>();
     }
 
-    public List<Card> getPlayCardList() {
-        return playCardList;
+    public String getName() {
+        return name;
+    }
+
+    public List<Card> getPlayerCardList() {
+        return playerCardList;
     }
 
     public void setStarting(List<Card> starting) {
-        setPlayCardList(starting);
+        setPlayerCardList(starting);
     }
 
     public void setFlop(List<Card> flop) {
-        setPlayCardList(flop);
+        setPlayerCardList(flop);
     }
 
     public void setTurn(Card turn) {
         List<Card> oneCard = List.of(turn);
-        setPlayCardList(oneCard);
+        setPlayerCardList(oneCard);
     }
 
     public void setRiver(Card river) {
         List<Card> oneCard = List.of(river);
-        setPlayCardList(oneCard);
+        setPlayerCardList(oneCard);
     }
-   private void setPlayCardList(List<Card> cards){
-       this.playCardList.addAll(cards);
-   }
+
+    private void setPlayerCardList(List<Card> cards) {
+        this.playerCardList.addAll(cards);
+    }
 
     @Override
     public String toString() {
-        return this.name+ "{" +
-                "playCardList=" + playCardList +
+        return this.name + "{" +
+                "playCardList=" + playerCardList +
                 '}';
     }
 }

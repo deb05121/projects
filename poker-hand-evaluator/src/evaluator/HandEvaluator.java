@@ -13,9 +13,9 @@ public class HandEvaluator {
         int comparisonResult = firstHand.compareTo(secondHand);
 
         return comparisonResult > 0
-            ? THE_FIRST_HAND_HAS_WON
-            : comparisonResult < 0
-            ? THE_SECOND_HAND_HAS_WON
-            : THE_TWO_HANDS_ARE_EQUAL;
+                ? THE_FIRST_HAND_HAS_WON
+                : comparisonResult < 0
+                ? THE_SECOND_HAND_HAS_WON
+                : THE_TWO_HANDS_ARE_EQUAL;
     }
 }

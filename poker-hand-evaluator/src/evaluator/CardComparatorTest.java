@@ -55,11 +55,11 @@ public class CardComparatorTest {
 
     private Hand provideHighCard() throws InvalidHandSizeException {
         return new Hand(List.of(
-            new Card(CardColour.CLUBS, CardValue.TWO),
-            new Card(CardColour.SPADES, CardValue.FOUR),
-            new Card(CardColour.HEARTS, CardValue.SIX),
-            new Card(CardColour.CLUBS, CardValue.EIGHT),
-            new Card(CardColour.DIAMONDS, CardValue.ACE))
+                new Card(CardColour.CLUBS, CardValue.TWO),
+                new Card(CardColour.SPADES, CardValue.FOUR),
+                new Card(CardColour.HEARTS, CardValue.SIX),
+                new Card(CardColour.CLUBS, CardValue.EIGHT),
+                new Card(CardColour.DIAMONDS, CardValue.ACE))
         );
 
     }
@@ -67,31 +67,31 @@ public class CardComparatorTest {
     //TODO: testutils --> provide-olom ezeket a hand-eket
     private Hand providePoker() throws InvalidHandSizeException {
         return new Hand(List.of(
-            new Card(CardColour.CLUBS, CardValue.TWO),
-            new Card(CardColour.SPADES, CardValue.TWO),
-            new Card(CardColour.HEARTS, CardValue.TWO),
-            new Card(CardColour.CLUBS, CardValue.KING),
-            new Card(CardColour.DIAMONDS, CardValue.TWO))
+                new Card(CardColour.CLUBS, CardValue.TWO),
+                new Card(CardColour.SPADES, CardValue.TWO),
+                new Card(CardColour.HEARTS, CardValue.TWO),
+                new Card(CardColour.CLUBS, CardValue.KING),
+                new Card(CardColour.DIAMONDS, CardValue.TWO))
         );
     }
 
     private Hand provideTwoPairs() throws InvalidHandSizeException {
         return new Hand(List.of(
-            new Card(CardColour.CLUBS, CardValue.TWO),
-            new Card(CardColour.SPADES, CardValue.TWO),
-            new Card(CardColour.HEARTS, CardValue.KING),
-            new Card(CardColour.CLUBS, CardValue.ACE),
-            new Card(CardColour.DIAMONDS, CardValue.KING))
+                new Card(CardColour.CLUBS, CardValue.TWO),
+                new Card(CardColour.SPADES, CardValue.TWO),
+                new Card(CardColour.HEARTS, CardValue.KING),
+                new Card(CardColour.CLUBS, CardValue.ACE),
+                new Card(CardColour.DIAMONDS, CardValue.KING))
         );
     }
 
     private Hand provideFullHouse() throws InvalidHandSizeException {
         return new Hand(List.of(
-            new Card(CardColour.CLUBS, CardValue.ACE),
-            new Card(CardColour.SPADES, CardValue.ACE),
-            new Card(CardColour.HEARTS, CardValue.KING),
-            new Card(CardColour.CLUBS, CardValue.KING),
-            new Card(CardColour.DIAMONDS, CardValue.KING))
+                new Card(CardColour.CLUBS, CardValue.ACE),
+                new Card(CardColour.SPADES, CardValue.ACE),
+                new Card(CardColour.HEARTS, CardValue.KING),
+                new Card(CardColour.CLUBS, CardValue.KING),
+                new Card(CardColour.DIAMONDS, CardValue.KING))
         );
     }
 }

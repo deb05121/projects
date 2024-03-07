@@ -5,7 +5,6 @@ public class Card implements Comparable<Card> {
     private CardValue cardValue;
 
     public Card() {
-
     }
 
     public CardColour getCardColour() {

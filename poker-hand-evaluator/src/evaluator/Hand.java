@@ -8,10 +8,9 @@ import java.util.Map;
 import static evaluator.HandValue.PAIR;
 
 public class Hand implements Comparable<Hand> {
-    private List<Card> cards;
+    private final List<Card> cards;
     private HandValue handValue;
-    private boolean isFlush;
-    private Map<CardValue, Integer> cardFrequencies = new HashMap<>();
+    private final Map<CardValue, Integer> cardFrequencies = new HashMap<>();
 
     public List<Card> getCards() {
         return cards;
@@ -27,7 +26,7 @@ public class Hand implements Comparable<Hand> {
 
     public Hand(List<Card> cards) throws InvalidHandSizeException {
         if (cards.size() != 5) {
-            //TODO: check invalid hands (for example multiple cards with identical value or colour)
+
             throw new InvalidHandSizeException("Hand size must be 5");
         }
         this.cards = new ArrayList<>(cards);
@@ -41,21 +40,19 @@ public class Hand implements Comparable<Hand> {
 
     private void setIsFlush() {
         //5 db ugyanolyan színű lap van-e
-        isFlush = isFlush();
+        boolean isFlush = isFlush();
     }
 
     private void setCardFrequencyMap() {
         for (Card card : cards) {
-            //ha a map tartalmazza az adott kártyaértéket, megnövelem a hozzá
-            //tartozó value-t 1-gyel
-            //map key-ei egy set-et alkotnak
+
             CardValue cardValue = card.getCardValue();
             if (cardFrequencies.containsKey(cardValue)) {
                 cardFrequencies.put(cardValue, cardFrequencies.get(cardValue) + 1);
             } else {
                 cardFrequencies.put(cardValue, 1);
             }
-            //egyébként odateszem 1-es értékkel
+
         }
     }
 
@@ -122,11 +119,11 @@ public class Hand implements Comparable<Hand> {
 
     private boolean isAceToFiveStraight() {
         return
-            cards.get(0).getCardValue() == CardValue.ACE &&
-                cards.get(1).getCardValue() == CardValue.FIVE &&
-                cards.get(2).getCardValue() == CardValue.FOUR &&
-                cards.get(3).getCardValue() == CardValue.THREE &&
-                cards.get(4).getCardValue() == CardValue.TWO;
+                cards.get(0).getCardValue() == CardValue.ACE &&
+                        cards.get(1).getCardValue() == CardValue.FIVE &&
+                        cards.get(2).getCardValue() == CardValue.FOUR &&
+                        cards.get(3).getCardValue() == CardValue.THREE &&
+                        cards.get(4).getCardValue() == CardValue.TWO;
     }
 
     private boolean isFlush() {
@@ -161,24 +158,20 @@ public class Hand implements Comparable<Hand> {
 
     @Override
     public String toString() {
-        return "Hand{" +
-            "cards=" + cards +
-            ", handValue=" + handValue +
-            ", cardFrequencies=" + cardFrequencies + '}';
+        return "\nHand{" +
+                "cards=" + cards +
+                ", handValue=" + handValue +
+                ", cardFrequencies=" + cardFrequencies + '}';
     }
 
     @Override
     public int compareTo(Hand other) {
-        //if the handvalue ordinals are different, return with the hand with the higher ordinal
+
         if (this.handValue.ordinal() != other.handValue.ordinal()) {
-            System.out.printf("hand 1: %s hand 2: %s%n", this.handValue, other.handValue);
-            System.out.printf("compareto result: %s%n", this.handValue.compareTo(other.handValue));
+            //System.out.printf("\nhand 1: %s hand 2: %s%n", this.handValue, other.handValue);
+            //System.out.printf("\ncompareto result: %s%n", this.handValue.compareTo(other.handValue));
             return this.handValue.compareTo(other.handValue);
         }
-        //straight: only the first one
-        //straight flush: only the first one
-        //pair, two pair (!), 3, full house, poker --> fogom a legnagyobb frequency-jű
-        //struktúrát, azokat komparálom, aztán haladok a kisebbek felé
 
         for (int i = 0; i < this.cards.size(); i++) {
             var thisCardValue = this.cards.get(i).getCardValue();
@@ -186,8 +179,7 @@ public class Hand implements Comparable<Hand> {
             int comparisonResult = thisCardValue.compareTo(otherCardValue);
             if (comparisonResult > 0) {
                 return -1;
-            }
-            else if(comparisonResult < 0){
+            } else if (comparisonResult < 0) {
                 return 1;
             }
         }

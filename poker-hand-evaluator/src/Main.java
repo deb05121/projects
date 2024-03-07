@@ -1,9 +1,6 @@
 import evaluator.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
     static DeckOfCards deck = new DeckOfCards();
@@ -11,34 +8,38 @@ public class Main {
 
     public static void main(String[] args) throws InvalidHandSizeException {
 
-        Player player1 = new Player("Player_A");
-        Player player2 = new Player("Player_B");
+        List<Player> playerList = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("How many players will play the Texas poker:");
+        int counterOfPlayer = scanner.nextInt();
+        scanner.nextLine();
+        for (int i = 0; i < counterOfPlayer; i++) {
+            String playerName = scanner.nextLine();
+            Player player = new Player(playerName);
+            playerList.add(player);
+        }
 
-        startOfDealing(player1);
-        startOfDealing(player2);
+        for (Player player : playerList) {
+            startOfDealing(player);
+        }
 
-        flopOfDealing(player1);
-        flopOfDealing(player2);
+        flopOfDealing();
+        turnOfDealing();
+        riverOfDealing();
 
-        turnOfDealing(player1);
-        turnOfDealing(player2);
+        for (Player player : playerList) {
+            player.setFlop(CardTable.getFlop());
+            player.setTurn(CardTable.getTurn());
+            player.setRiver(CardTable.getRiver());
+            System.out.printf("\nPlayer %s seven card: %s", player.getName(), player.getPlayerCardList());
+        }
 
-        riverOfDealing(player1);
-        riverOfDealing(player2);
-
-        System.out.println(player1);
-        System.out.println(player2);
-
-        /*7 lapból 21 különböző hand állítható össze:
-         */
         Map<Player, Hand> round = new HashMap<>();
-
-        Hand player1Hand = getBestHand(player1.getPlayCardList());
-        System.out.println("Player 1 hand: "+player1Hand);
-        round.put(player1, player1Hand);
-        Hand player2Hand = getBestHand(player2.getPlayCardList());
-        System.out.println("Player 2 hand: "+player2Hand);
-        round.put(player2, player2Hand);
+        for (Player player : playerList) {
+            Hand playerHand = getBestHand(player.getPlayerCardList());
+            System.out.printf("\nPlayer %s best hand: %s", player.getName(), playerHand);
+            round.put(player, playerHand);
+        }
 
         winnerHand(round);
     }
@@ -46,13 +47,14 @@ public class Main {
     private static void winnerHand(Map<Player, Hand> round) {
         Hand bestHand = null;
         Player winner = null;
-        for(Player key: round.keySet()){
+        for (Player key : round.keySet()) {
             if (bestHand == null || (round.get(key).compareTo(bestHand) > 0)) {
                 bestHand = round.get(key);
                 winner = key;
             }
         }
-        System.out.printf("The winner: %s, best hand: %s", winner, bestHand);
+        assert winner != null;
+        System.out.printf("\nThe winner: %s, \nbest hand: %s", winner.getName(), bestHand);
     }
 
     private static Hand getBestHand(List<Card> playCardList) throws InvalidHandSizeException {
@@ -65,13 +67,11 @@ public class Main {
                         tempCardList.add(playCardList.get(k));
                     }
                 }
-                System.out.println(tempCardList.size());
                 Hand tempHand = new Hand(tempCardList);
                 tempCardList.clear();
                 if (bestHand == null || (tempHand.compareTo(bestHand) > 0)) {
                     bestHand = tempHand;
                 }
-
             }
         }
         return bestHand;
@@ -85,22 +85,22 @@ public class Main {
         player.setStarting(cardList);
     }
 
-    private static void flopOfDealing(Player player) {
+    private static void flopOfDealing() {
         List<Card> cardList = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             cardList.add(deck.getFirstCardOfDeck());
         }
-        player.setFlop(cardList);
+        CardTable.setFlop(cardList);
     }
 
-    private static void turnOfDealing(Player player) {
+    private static void turnOfDealing() {
         Card card = deck.getFirstCardOfDeck();
-        player.setTurn(card);
+        CardTable.setTurn(card);
     }
 
-    private static void riverOfDealing(Player player) {
+    private static void riverOfDealing() {
         Card card = deck.getFirstCardOfDeck();
-        player.setRiver(card);
+        CardTable.setRiver(card);
     }
 
 }

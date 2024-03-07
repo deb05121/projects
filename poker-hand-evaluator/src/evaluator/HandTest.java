@@ -19,25 +19,25 @@ public class HandTest {
 
     static Stream<Hand> provideFlushHands() throws InvalidHandSizeException {
         return Stream.of(
-            new Hand(List.of(
-                new Card(CardColour.CLUBS, CardValue.ACE),
-                new Card(CardColour.CLUBS, CardValue.EIGHT),
-                new Card(CardColour.CLUBS, CardValue.NINE),
-                new Card(CardColour.CLUBS, CardValue.KING),
-                new Card(CardColour.CLUBS, CardValue.TWO))
-            ), new Hand(List.of(
-                new Card(CardColour.CLUBS, CardValue.QUEEN),
-                new Card(CardColour.CLUBS, CardValue.EIGHT),
-                new Card(CardColour.CLUBS, CardValue.NINE),
-                new Card(CardColour.CLUBS, CardValue.KING),
-                new Card(CardColour.CLUBS, CardValue.THREE))
-            ), new Hand(List.of(
-                new Card(CardColour.CLUBS, CardValue.JACK),
-                new Card(CardColour.CLUBS, CardValue.QUEEN),
-                new Card(CardColour.CLUBS, CardValue.KING),
-                new Card(CardColour.CLUBS, CardValue.ACE),
-                new Card(CardColour.CLUBS, CardValue.NINE)
-            ))
+                new Hand(List.of(
+                        new Card(CardColour.CLUBS, CardValue.ACE),
+                        new Card(CardColour.CLUBS, CardValue.EIGHT),
+                        new Card(CardColour.CLUBS, CardValue.NINE),
+                        new Card(CardColour.CLUBS, CardValue.KING),
+                        new Card(CardColour.CLUBS, CardValue.TWO))
+                ), new Hand(List.of(
+                        new Card(CardColour.CLUBS, CardValue.QUEEN),
+                        new Card(CardColour.CLUBS, CardValue.EIGHT),
+                        new Card(CardColour.CLUBS, CardValue.NINE),
+                        new Card(CardColour.CLUBS, CardValue.KING),
+                        new Card(CardColour.CLUBS, CardValue.THREE))
+                ), new Hand(List.of(
+                        new Card(CardColour.CLUBS, CardValue.JACK),
+                        new Card(CardColour.CLUBS, CardValue.QUEEN),
+                        new Card(CardColour.CLUBS, CardValue.KING),
+                        new Card(CardColour.CLUBS, CardValue.ACE),
+                        new Card(CardColour.CLUBS, CardValue.NINE)
+                ))
         );
     }
 
@@ -49,25 +49,25 @@ public class HandTest {
 
     static Stream<Hand> providePokerHands() throws InvalidHandSizeException {
         return Stream.of(
-            new Hand(List.of(
-                new Card(CardColour.CLUBS, CardValue.ACE),
-                new Card(CardColour.SPADES, CardValue.ACE),
-                new Card(CardColour.HEARTS, CardValue.ACE),
-                new Card(CardColour.CLUBS, CardValue.KING),
-                new Card(CardColour.DIAMONDS, CardValue.ACE))
-            ), new Hand(List.of(
-                new Card(CardColour.CLUBS, CardValue.QUEEN),
-                new Card(CardColour.DIAMONDS, CardValue.EIGHT),
-                new Card(CardColour.SPADES, CardValue.QUEEN),
-                new Card(CardColour.HEARTS, CardValue.QUEEN),
-                new Card(CardColour.CLUBS, CardValue.QUEEN))
-            ), new Hand(List.of(
-                new Card(CardColour.CLUBS, CardValue.JACK),
-                new Card(CardColour.CLUBS, CardValue.KING),
-                new Card(CardColour.CLUBS, CardValue.KING),
-                new Card(CardColour.CLUBS, CardValue.KING),
-                new Card(CardColour.CLUBS, CardValue.KING)
-            ))
+                new Hand(List.of(
+                        new Card(CardColour.CLUBS, CardValue.ACE),
+                        new Card(CardColour.SPADES, CardValue.ACE),
+                        new Card(CardColour.HEARTS, CardValue.ACE),
+                        new Card(CardColour.CLUBS, CardValue.KING),
+                        new Card(CardColour.DIAMONDS, CardValue.ACE))
+                ), new Hand(List.of(
+                        new Card(CardColour.CLUBS, CardValue.QUEEN),
+                        new Card(CardColour.DIAMONDS, CardValue.EIGHT),
+                        new Card(CardColour.SPADES, CardValue.QUEEN),
+                        new Card(CardColour.HEARTS, CardValue.QUEEN),
+                        new Card(CardColour.CLUBS, CardValue.QUEEN))
+                ), new Hand(List.of(
+                        new Card(CardColour.CLUBS, CardValue.JACK),
+                        new Card(CardColour.CLUBS, CardValue.KING),
+                        new Card(CardColour.CLUBS, CardValue.KING),
+                        new Card(CardColour.CLUBS, CardValue.KING),
+                        new Card(CardColour.CLUBS, CardValue.KING)
+                ))
         );
         //pénz
         //vertical scaling: CPU / memory increase
@@ -86,25 +86,25 @@ public class HandTest {
 
     static Stream<Hand> provideThreeOfAKindHands() throws InvalidHandSizeException {
         return Stream.of(
-            new Hand(List.of(
-                new Card(CardColour.CLUBS, CardValue.ACE),
-                new Card(CardColour.SPADES, CardValue.ACE),
-                new Card(CardColour.HEARTS, CardValue.ACE),
-                new Card(CardColour.CLUBS, CardValue.KING),
-                new Card(CardColour.DIAMONDS, CardValue.SEVEN))
-            ), new Hand(List.of(
-                new Card(CardColour.CLUBS, CardValue.QUEEN),
-                new Card(CardColour.DIAMONDS, CardValue.EIGHT),
-                new Card(CardColour.SPADES, CardValue.QUEEN),
-                new Card(CardColour.HEARTS, CardValue.NINE),
-                new Card(CardColour.CLUBS, CardValue.QUEEN))
-            ), new Hand(List.of(
-                new Card(CardColour.CLUBS, CardValue.JACK),
-                new Card(CardColour.CLUBS, CardValue.KING),
-                new Card(CardColour.CLUBS, CardValue.KING),
-                new Card(CardColour.CLUBS, CardValue.KING),
-                new Card(CardColour.DIAMONDS, CardValue.TEN)
-            ))
+                new Hand(List.of(
+                        new Card(CardColour.CLUBS, CardValue.ACE),
+                        new Card(CardColour.SPADES, CardValue.ACE),
+                        new Card(CardColour.HEARTS, CardValue.ACE),
+                        new Card(CardColour.CLUBS, CardValue.KING),
+                        new Card(CardColour.DIAMONDS, CardValue.SEVEN))
+                ), new Hand(List.of(
+                        new Card(CardColour.CLUBS, CardValue.QUEEN),
+                        new Card(CardColour.DIAMONDS, CardValue.EIGHT),
+                        new Card(CardColour.SPADES, CardValue.QUEEN),
+                        new Card(CardColour.HEARTS, CardValue.NINE),
+                        new Card(CardColour.CLUBS, CardValue.QUEEN))
+                ), new Hand(List.of(
+                        new Card(CardColour.CLUBS, CardValue.JACK),
+                        new Card(CardColour.CLUBS, CardValue.KING),
+                        new Card(CardColour.CLUBS, CardValue.KING),
+                        new Card(CardColour.CLUBS, CardValue.KING),
+                        new Card(CardColour.DIAMONDS, CardValue.TEN)
+                ))
         );
     }
 
@@ -116,25 +116,25 @@ public class HandTest {
 
     static Stream<Hand> provideFullHouseHands() throws InvalidHandSizeException {
         return Stream.of(
-            new Hand(List.of(
-                new Card(CardColour.CLUBS, CardValue.ACE),
-                new Card(CardColour.SPADES, CardValue.ACE),
-                new Card(CardColour.HEARTS, CardValue.ACE),
-                new Card(CardColour.CLUBS, CardValue.KING),
-                new Card(CardColour.DIAMONDS, CardValue.KING))
-            ), new Hand(List.of(
-                new Card(CardColour.CLUBS, CardValue.QUEEN),
-                new Card(CardColour.DIAMONDS, CardValue.NINE),
-                new Card(CardColour.SPADES, CardValue.QUEEN),
-                new Card(CardColour.HEARTS, CardValue.NINE),
-                new Card(CardColour.CLUBS, CardValue.QUEEN))
-            ), new Hand(List.of(
-                new Card(CardColour.CLUBS, CardValue.JACK),
-                new Card(CardColour.CLUBS, CardValue.KING),
-                new Card(CardColour.CLUBS, CardValue.KING),
-                new Card(CardColour.CLUBS, CardValue.KING),
-                new Card(CardColour.DIAMONDS, CardValue.JACK)
-            ))
+                new Hand(List.of(
+                        new Card(CardColour.CLUBS, CardValue.ACE),
+                        new Card(CardColour.SPADES, CardValue.ACE),
+                        new Card(CardColour.HEARTS, CardValue.ACE),
+                        new Card(CardColour.CLUBS, CardValue.KING),
+                        new Card(CardColour.DIAMONDS, CardValue.KING))
+                ), new Hand(List.of(
+                        new Card(CardColour.CLUBS, CardValue.QUEEN),
+                        new Card(CardColour.DIAMONDS, CardValue.NINE),
+                        new Card(CardColour.SPADES, CardValue.QUEEN),
+                        new Card(CardColour.HEARTS, CardValue.NINE),
+                        new Card(CardColour.CLUBS, CardValue.QUEEN))
+                ), new Hand(List.of(
+                        new Card(CardColour.CLUBS, CardValue.JACK),
+                        new Card(CardColour.CLUBS, CardValue.KING),
+                        new Card(CardColour.CLUBS, CardValue.KING),
+                        new Card(CardColour.CLUBS, CardValue.KING),
+                        new Card(CardColour.DIAMONDS, CardValue.JACK)
+                ))
         );
     }
 
@@ -147,25 +147,25 @@ public class HandTest {
 
     static Stream<Hand> providePairHands() throws InvalidHandSizeException {
         return Stream.of(
-            new Hand(List.of(
-                new Card(CardColour.CLUBS, CardValue.ACE),
-                new Card(CardColour.SPADES, CardValue.ACE),
-                new Card(CardColour.HEARTS, CardValue.TEN),
-                new Card(CardColour.CLUBS, CardValue.THREE),
-                new Card(CardColour.DIAMONDS, CardValue.TWO))
-            ), new Hand(List.of(
-                new Card(CardColour.CLUBS, CardValue.QUEEN),
-                new Card(CardColour.DIAMONDS, CardValue.ACE),
-                new Card(CardColour.SPADES, CardValue.QUEEN),
-                new Card(CardColour.HEARTS, CardValue.KING),
-                new Card(CardColour.CLUBS, CardValue.TWO))
-            ), new Hand(List.of(
-                new Card(CardColour.CLUBS, CardValue.JACK),
-                new Card(CardColour.CLUBS, CardValue.TWO),
-                new Card(CardColour.CLUBS, CardValue.THREE),
-                new Card(CardColour.CLUBS, CardValue.FOUR),
-                new Card(CardColour.DIAMONDS, CardValue.JACK)
-            )));
+                new Hand(List.of(
+                        new Card(CardColour.CLUBS, CardValue.ACE),
+                        new Card(CardColour.SPADES, CardValue.ACE),
+                        new Card(CardColour.HEARTS, CardValue.TEN),
+                        new Card(CardColour.CLUBS, CardValue.THREE),
+                        new Card(CardColour.DIAMONDS, CardValue.TWO))
+                ), new Hand(List.of(
+                        new Card(CardColour.CLUBS, CardValue.QUEEN),
+                        new Card(CardColour.DIAMONDS, CardValue.ACE),
+                        new Card(CardColour.SPADES, CardValue.QUEEN),
+                        new Card(CardColour.HEARTS, CardValue.KING),
+                        new Card(CardColour.CLUBS, CardValue.TWO))
+                ), new Hand(List.of(
+                        new Card(CardColour.CLUBS, CardValue.JACK),
+                        new Card(CardColour.CLUBS, CardValue.TWO),
+                        new Card(CardColour.CLUBS, CardValue.THREE),
+                        new Card(CardColour.CLUBS, CardValue.FOUR),
+                        new Card(CardColour.DIAMONDS, CardValue.JACK)
+                )));
     }
 
     @ParameterizedTest
@@ -176,25 +176,25 @@ public class HandTest {
 
     static Stream<Hand> provideTwoPairHands() throws InvalidHandSizeException {
         return Stream.of(
-            new Hand(List.of(
-                new Card(CardColour.CLUBS, CardValue.ACE),
-                new Card(CardColour.SPADES, CardValue.ACE),
-                new Card(CardColour.HEARTS, CardValue.SIX),
-                new Card(CardColour.CLUBS, CardValue.KING),
-                new Card(CardColour.DIAMONDS, CardValue.KING))
-            ), new Hand(List.of(
-                new Card(CardColour.CLUBS, CardValue.QUEEN),
-                new Card(CardColour.DIAMONDS, CardValue.NINE),
-                new Card(CardColour.SPADES, CardValue.QUEEN),
-                new Card(CardColour.HEARTS, CardValue.NINE),
-                new Card(CardColour.CLUBS, CardValue.TEN))
-            ), new Hand(List.of(
-                new Card(CardColour.CLUBS, CardValue.JACK),
-                new Card(CardColour.CLUBS, CardValue.KING),
-                new Card(CardColour.CLUBS, CardValue.KING),
-                new Card(CardColour.CLUBS, CardValue.SEVEN),
-                new Card(CardColour.DIAMONDS, CardValue.SEVEN)
-            ))
+                new Hand(List.of(
+                        new Card(CardColour.CLUBS, CardValue.ACE),
+                        new Card(CardColour.SPADES, CardValue.ACE),
+                        new Card(CardColour.HEARTS, CardValue.SIX),
+                        new Card(CardColour.CLUBS, CardValue.KING),
+                        new Card(CardColour.DIAMONDS, CardValue.KING))
+                ), new Hand(List.of(
+                        new Card(CardColour.CLUBS, CardValue.QUEEN),
+                        new Card(CardColour.DIAMONDS, CardValue.NINE),
+                        new Card(CardColour.SPADES, CardValue.QUEEN),
+                        new Card(CardColour.HEARTS, CardValue.NINE),
+                        new Card(CardColour.CLUBS, CardValue.TEN))
+                ), new Hand(List.of(
+                        new Card(CardColour.CLUBS, CardValue.JACK),
+                        new Card(CardColour.CLUBS, CardValue.KING),
+                        new Card(CardColour.CLUBS, CardValue.KING),
+                        new Card(CardColour.CLUBS, CardValue.SEVEN),
+                        new Card(CardColour.DIAMONDS, CardValue.SEVEN)
+                ))
         );
     }
 
@@ -206,24 +206,24 @@ public class HandTest {
 
     static Stream<Hand> provideStraightHands() throws InvalidHandSizeException {
         return Stream.of(
-            new Hand(List.of(
-                new Card(CardColour.CLUBS, CardValue.SIX),
-                new Card(CardColour.SPADES, CardValue.SEVEN),
-                new Card(CardColour.HEARTS, CardValue.FIVE),
-                new Card(CardColour.CLUBS, CardValue.FOUR),
-                new Card(CardColour.DIAMONDS, CardValue.THREE))
-            ), new Hand(List.of(
-                new Card(CardColour.CLUBS, CardValue.TEN),
-                new Card(CardColour.DIAMONDS, CardValue.JACK),
-                new Card(CardColour.SPADES, CardValue.ACE),
-                new Card(CardColour.HEARTS, CardValue.KING),
-                new Card(CardColour.CLUBS, CardValue.QUEEN)))
-            , new Hand(List.of(
-                new Card(CardColour.CLUBS, CardValue.FIVE),
-                new Card(CardColour.DIAMONDS, CardValue.ACE),
-                new Card(CardColour.SPADES, CardValue.TWO),
-                new Card(CardColour.HEARTS, CardValue.THREE),
-                new Card(CardColour.CLUBS, CardValue.FOUR)))
+                new Hand(List.of(
+                        new Card(CardColour.CLUBS, CardValue.SIX),
+                        new Card(CardColour.SPADES, CardValue.SEVEN),
+                        new Card(CardColour.HEARTS, CardValue.FIVE),
+                        new Card(CardColour.CLUBS, CardValue.FOUR),
+                        new Card(CardColour.DIAMONDS, CardValue.THREE))
+                ), new Hand(List.of(
+                        new Card(CardColour.CLUBS, CardValue.TEN),
+                        new Card(CardColour.DIAMONDS, CardValue.JACK),
+                        new Card(CardColour.SPADES, CardValue.ACE),
+                        new Card(CardColour.HEARTS, CardValue.KING),
+                        new Card(CardColour.CLUBS, CardValue.QUEEN)))
+                , new Hand(List.of(
+                        new Card(CardColour.CLUBS, CardValue.FIVE),
+                        new Card(CardColour.DIAMONDS, CardValue.ACE),
+                        new Card(CardColour.SPADES, CardValue.TWO),
+                        new Card(CardColour.HEARTS, CardValue.THREE),
+                        new Card(CardColour.CLUBS, CardValue.FOUR)))
         );
     }
 
@@ -235,35 +235,35 @@ public class HandTest {
 
     static Stream<Hand> provideStraightFlushHands() throws InvalidHandSizeException {
         return Stream.of(
-            new Hand(List.of(
-                new Card(CardColour.CLUBS, CardValue.SIX),
-                new Card(CardColour.CLUBS, CardValue.SEVEN),
-                new Card(CardColour.CLUBS, CardValue.FIVE),
-                new Card(CardColour.CLUBS, CardValue.FOUR),
-                new Card(CardColour.CLUBS, CardValue.THREE))
-            ), new Hand(List.of(
-                new Card(CardColour.DIAMONDS, CardValue.TEN),
-                new Card(CardColour.DIAMONDS, CardValue.JACK),
-                new Card(CardColour.DIAMONDS, CardValue.NINE),
-                new Card(CardColour.DIAMONDS, CardValue.KING),
-                new Card(CardColour.DIAMONDS, CardValue.QUEEN)))
-            , new Hand(List.of(
-                new Card(CardColour.SPADES, CardValue.FIVE),
-                new Card(CardColour.SPADES, CardValue.ACE),
-                new Card(CardColour.SPADES, CardValue.TWO),
-                new Card(CardColour.SPADES, CardValue.THREE),
-                new Card(CardColour.SPADES, CardValue.FOUR)))
+                new Hand(List.of(
+                        new Card(CardColour.CLUBS, CardValue.SIX),
+                        new Card(CardColour.CLUBS, CardValue.SEVEN),
+                        new Card(CardColour.CLUBS, CardValue.FIVE),
+                        new Card(CardColour.CLUBS, CardValue.FOUR),
+                        new Card(CardColour.CLUBS, CardValue.THREE))
+                ), new Hand(List.of(
+                        new Card(CardColour.DIAMONDS, CardValue.TEN),
+                        new Card(CardColour.DIAMONDS, CardValue.JACK),
+                        new Card(CardColour.DIAMONDS, CardValue.NINE),
+                        new Card(CardColour.DIAMONDS, CardValue.KING),
+                        new Card(CardColour.DIAMONDS, CardValue.QUEEN)))
+                , new Hand(List.of(
+                        new Card(CardColour.SPADES, CardValue.FIVE),
+                        new Card(CardColour.SPADES, CardValue.ACE),
+                        new Card(CardColour.SPADES, CardValue.TWO),
+                        new Card(CardColour.SPADES, CardValue.THREE),
+                        new Card(CardColour.SPADES, CardValue.FOUR)))
         );
     }
 
     @Test
     void shouldBeRoyalFlush() throws InvalidHandSizeException {
         Hand hand = new Hand(List.of(
-            new Card(CardColour.DIAMONDS, CardValue.TEN),
-            new Card(CardColour.DIAMONDS, CardValue.QUEEN),
-            new Card(CardColour.DIAMONDS, CardValue.KING),
-            new Card(CardColour.DIAMONDS, CardValue.JACK),
-            new Card(CardColour.DIAMONDS, CardValue.ACE)));
+                new Card(CardColour.DIAMONDS, CardValue.TEN),
+                new Card(CardColour.DIAMONDS, CardValue.QUEEN),
+                new Card(CardColour.DIAMONDS, CardValue.KING),
+                new Card(CardColour.DIAMONDS, CardValue.JACK),
+                new Card(CardColour.DIAMONDS, CardValue.ACE)));
         Assertions.assertEquals(HandValue.ROYAL_FLUSH, hand.getHandValue());
     }
 
@@ -279,23 +279,23 @@ public class HandTest {
     static Stream<List<Hand>> provideHandsWithDifferentHandValues() throws InvalidHandSizeException {
         //functional interfaces
         return Stream.of(
-            List.of(
-                //royal
-                new Hand(List.of(
-                    new Card(CardColour.DIAMONDS, CardValue.KING),
-                    new Card(CardColour.DIAMONDS, CardValue.QUEEN),
-                    new Card(CardColour.DIAMONDS, CardValue.JACK),
-                    new Card(CardColour.DIAMONDS, CardValue.TEN),
-                    new Card(CardColour.DIAMONDS, CardValue.ACE)
-                )),
-                new Hand(List.of(
-                    new Card(CardColour.DIAMONDS, CardValue.KING),
-                    new Card(CardColour.DIAMONDS, CardValue.QUEEN),
-                    new Card(CardColour.DIAMONDS, CardValue.JACK),
-                    new Card(CardColour.DIAMONDS, CardValue.TEN),
-                    new Card(CardColour.DIAMONDS, CardValue.NINE)
-                ))
-            )
+                List.of(
+                        //royal
+                        new Hand(List.of(
+                                new Card(CardColour.DIAMONDS, CardValue.KING),
+                                new Card(CardColour.DIAMONDS, CardValue.QUEEN),
+                                new Card(CardColour.DIAMONDS, CardValue.JACK),
+                                new Card(CardColour.DIAMONDS, CardValue.TEN),
+                                new Card(CardColour.DIAMONDS, CardValue.ACE)
+                        )),
+                        new Hand(List.of(
+                                new Card(CardColour.DIAMONDS, CardValue.KING),
+                                new Card(CardColour.DIAMONDS, CardValue.QUEEN),
+                                new Card(CardColour.DIAMONDS, CardValue.JACK),
+                                new Card(CardColour.DIAMONDS, CardValue.TEN),
+                                new Card(CardColour.DIAMONDS, CardValue.NINE)
+                        ))
+                )
 
             /*TODO: provide more tests
               @CSVFileSource
@@ -308,25 +308,25 @@ public class HandTest {
     @DisplayName("straight -> first > second")
     void shouldBeAbleToEvaluateTwoStraightHandsWhenFirstIsGreaterThanSecond() throws InvalidHandSizeException {
         Hand firstHand = new Hand(
-            List.of(
-                new Card(CardColour.CLUBS, CardValue.KING),
-                new Card(CardColour.DIAMONDS, CardValue.QUEEN),
-                new Card(CardColour.DIAMONDS, CardValue.JACK),
-                new Card(CardColour.DIAMONDS, CardValue.TEN),
-                new Card(CardColour.DIAMONDS, CardValue.ACE)
-            )
+                List.of(
+                        new Card(CardColour.CLUBS, CardValue.KING),
+                        new Card(CardColour.DIAMONDS, CardValue.QUEEN),
+                        new Card(CardColour.DIAMONDS, CardValue.JACK),
+                        new Card(CardColour.DIAMONDS, CardValue.TEN),
+                        new Card(CardColour.DIAMONDS, CardValue.ACE)
+                )
         );
 
         System.out.println(firstHand);
 
         Hand secondHand = new Hand(
-            List.of(
-                new Card(CardColour.CLUBS, CardValue.EIGHT),
-                new Card(CardColour.DIAMONDS, CardValue.QUEEN),
-                new Card(CardColour.DIAMONDS, CardValue.JACK),
-                new Card(CardColour.DIAMONDS, CardValue.TEN),
-                new Card(CardColour.DIAMONDS, CardValue.NINE)
-            )
+                List.of(
+                        new Card(CardColour.CLUBS, CardValue.EIGHT),
+                        new Card(CardColour.DIAMONDS, CardValue.QUEEN),
+                        new Card(CardColour.DIAMONDS, CardValue.JACK),
+                        new Card(CardColour.DIAMONDS, CardValue.TEN),
+                        new Card(CardColour.DIAMONDS, CardValue.NINE)
+                )
         );
 
         System.out.println(secondHand);
@@ -339,23 +339,23 @@ public class HandTest {
     @DisplayName("straight -> second > first")
     void shouldBeAbleToEvaluateTwoStraightHandsWhenSecondIsGreaterThanFirst() throws InvalidHandSizeException {
         Hand firstHand = new Hand(
-            List.of(
-                new Card(CardColour.CLUBS, CardValue.KING),
-                new Card(CardColour.DIAMONDS, CardValue.QUEEN),
-                new Card(CardColour.DIAMONDS, CardValue.JACK),
-                new Card(CardColour.DIAMONDS, CardValue.TEN),
-                new Card(CardColour.DIAMONDS, CardValue.ACE)
-            )
+                List.of(
+                        new Card(CardColour.CLUBS, CardValue.KING),
+                        new Card(CardColour.DIAMONDS, CardValue.QUEEN),
+                        new Card(CardColour.DIAMONDS, CardValue.JACK),
+                        new Card(CardColour.DIAMONDS, CardValue.TEN),
+                        new Card(CardColour.DIAMONDS, CardValue.ACE)
+                )
         );
 
         Hand secondHand = new Hand(
-            List.of(
-                new Card(CardColour.CLUBS, CardValue.EIGHT),
-                new Card(CardColour.DIAMONDS, CardValue.QUEEN),
-                new Card(CardColour.DIAMONDS, CardValue.JACK),
-                new Card(CardColour.DIAMONDS, CardValue.TEN),
-                new Card(CardColour.DIAMONDS, CardValue.NINE)
-            )
+                List.of(
+                        new Card(CardColour.CLUBS, CardValue.EIGHT),
+                        new Card(CardColour.DIAMONDS, CardValue.QUEEN),
+                        new Card(CardColour.DIAMONDS, CardValue.JACK),
+                        new Card(CardColour.DIAMONDS, CardValue.TEN),
+                        new Card(CardColour.DIAMONDS, CardValue.NINE)
+                )
         );
 
         //Assertj --> assertThat --> assertThat(firstHand.compareTo(secondHand)).isGreaterThan(0)
@@ -366,23 +366,23 @@ public class HandTest {
     @DisplayName("straight -> second == first")
     void shouldBeAbleToEvaluateTwoStraightHandsWhenSecondIsEqualToFirst() throws InvalidHandSizeException {
         Hand firstHand = new Hand(
-            List.of(
-                new Card(CardColour.CLUBS, CardValue.KING),
-                new Card(CardColour.DIAMONDS, CardValue.QUEEN),
-                new Card(CardColour.DIAMONDS, CardValue.JACK),
-                new Card(CardColour.HEARTS, CardValue.TEN),
-                new Card(CardColour.DIAMONDS, CardValue.ACE)
-            )
+                List.of(
+                        new Card(CardColour.CLUBS, CardValue.KING),
+                        new Card(CardColour.DIAMONDS, CardValue.QUEEN),
+                        new Card(CardColour.DIAMONDS, CardValue.JACK),
+                        new Card(CardColour.HEARTS, CardValue.TEN),
+                        new Card(CardColour.DIAMONDS, CardValue.ACE)
+                )
         );
 
         Hand secondHand = new Hand(
-            List.of(
-                new Card(CardColour.DIAMONDS, CardValue.JACK),
-                new Card(CardColour.CLUBS, CardValue.KING),
-                new Card(CardColour.DIAMONDS, CardValue.QUEEN),
-                new Card(CardColour.CLUBS, CardValue.TEN),
-                new Card(CardColour.DIAMONDS, CardValue.ACE)
-            )
+                List.of(
+                        new Card(CardColour.DIAMONDS, CardValue.JACK),
+                        new Card(CardColour.CLUBS, CardValue.KING),
+                        new Card(CardColour.DIAMONDS, CardValue.QUEEN),
+                        new Card(CardColour.CLUBS, CardValue.TEN),
+                        new Card(CardColour.DIAMONDS, CardValue.ACE)
+                )
         );
 
         Assertions.assertEquals(0, firstHand.compareTo(secondHand));
