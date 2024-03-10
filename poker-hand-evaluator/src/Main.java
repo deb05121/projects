@@ -3,58 +3,87 @@ import evaluator.*;
 import java.util.*;
 
 public class Main {
-    static DeckOfCards deck = new DeckOfCards();
-    static List<Hand> winnerHand = new ArrayList<>();
+    static DeckOfCards deck;
+    static Hand winnerHand = null;
+    static boolean gameOver = false;
+
+    static List<Player> playerList = new ArrayList<>();
 
     public static void main(String[] args) throws InvalidHandSizeException {
-
-        List<Player> playerList = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("How many players will play the Texas poker:");
-        int counterOfPlayer = scanner.nextInt();
-        scanner.nextLine();
-        for (int i = 0; i < counterOfPlayer; i++) {
-            String playerName = scanner.nextLine();
-            Player player = new Player(playerName);
-            playerList.add(player);
+        while (!gameOver) {
+            deck = new DeckOfCards();
+            System.out.println("How many new players will play the Texas poker:");
+            int counterOfPlayer = scanner.nextInt();
+            int allPlayers = playerList.size() + counterOfPlayer;
+            if ((allPlayers < 2) || allPlayers > 10) {
+                System.out.println("Players number have to be 2 at least and 10 at most.");
+                gameOver = true;
+                break;
+            }
+            scanner.nextLine();
+            for (int i = 0; i < counterOfPlayer; i++) {
+                String playerName = scanner.nextLine();
+                Player player = new Player(playerName);
+                playerList.add(player);
+            }
+
+            for (Player player : playerList) {
+                startOfDealing(player);
+            }
+
+            flopOfDealing();
+            turnOfDealing();
+            riverOfDealing();
+
+            for (Player player : playerList) {
+                player.setPlayerCardList(CardsOnTheTable.getDesk());
+
+                System.out.printf("\nPlayer %s seven card: %s\n", player.getName(), player.getPlayerCardList());
+            }
+
+            Map<Player, Hand> round = new HashMap<>();
+            for (Player player : playerList) {
+                Hand playerHand = getBestHand(player.getPlayerCardList());
+                System.out.printf("\nPlayer %s best hand: %s\n", player.getName(), playerHand);
+                round.put(player, playerHand);
+            }
+
+            winnerHand = getWinnerHand(round);
+
+            System.out.println("\nPlayers: \n" + playerList);
+            System.out.println("How many person will exit the card game?");
+            int exit = scanner.nextInt();
+            if (exit == playerList.size()) {
+                gameOver = true;
+                break;
+            }
+            scanner.nextLine();
+            for (int i = 0; i < exit; i++) {
+                System.out.println("Who exits the card game?");
+                String name = scanner.nextLine();
+                playerList.removeIf(player -> player.getName().equals(name));
+            }
+            for(Player player: playerList){
+                player.delPlayerCardList();
+            }
         }
-
-        for (Player player : playerList) {
-            startOfDealing(player);
-        }
-
-        flopOfDealing();
-        turnOfDealing();
-        riverOfDealing();
-
-        for (Player player : playerList) {
-            player.setFlop(CardTable.getFlop());
-            player.setTurn(CardTable.getTurn());
-            player.setRiver(CardTable.getRiver());
-            System.out.printf("\nPlayer %s seven card: %s", player.getName(), player.getPlayerCardList());
-        }
-
-        Map<Player, Hand> round = new HashMap<>();
-        for (Player player : playerList) {
-            Hand playerHand = getBestHand(player.getPlayerCardList());
-            System.out.printf("\nPlayer %s best hand: %s", player.getName(), playerHand);
-            round.put(player, playerHand);
-        }
-
-        winnerHand(round);
+        System.out.println("Game over!");
+        scanner.close();
     }
 
-    private static void winnerHand(Map<Player, Hand> round) {
-        Hand bestHand = null;
+    private static Hand getWinnerHand(Map<Player, Hand> round) {
+        Hand bestHandOfWinner = null;
         Player winner = null;
         for (Player key : round.keySet()) {
-            if (bestHand == null || (round.get(key).compareTo(bestHand) > 0)) {
-                bestHand = round.get(key);
+            if (bestHandOfWinner == null || (round.get(key).compareTo(bestHandOfWinner) > 0)) {
+                bestHandOfWinner = round.get(key);
                 winner = key;
             }
         }
         assert winner != null;
-        System.out.printf("\nThe winner: %s, \nbest hand: %s", winner.getName(), bestHand);
+        System.out.printf("\nThe winner: %s, \nbest hand: %s", winner.getName(), bestHandOfWinner);
+        return bestHandOfWinner;
     }
 
     private static Hand getBestHand(List<Card> playCardList) throws InvalidHandSizeException {
@@ -90,17 +119,17 @@ public class Main {
         for (int i = 0; i < 3; i++) {
             cardList.add(deck.getFirstCardOfDeck());
         }
-        CardTable.setFlop(cardList);
+        CardsOnTheTable.addFlopToDesk(cardList);
     }
 
     private static void turnOfDealing() {
         Card card = deck.getFirstCardOfDeck();
-        CardTable.setTurn(card);
+        CardsOnTheTable.addCardToDesk(card);
     }
 
     private static void riverOfDealing() {
         Card card = deck.getFirstCardOfDeck();
-        CardTable.setRiver(card);
+        CardsOnTheTable.addCardToDesk(card);
     }
 
 }

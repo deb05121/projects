@@ -36,7 +36,7 @@ public class DeckOfCards {
         for (Integer key : deckOfPlay.keySet()) {
             playCards.add(deckOfPlay.get(key));
         }
-        //System.out.println(playCards.size());
+        System.out.println(playCards.size());
     }
 
     public Card getFirstCardOfDeck() {

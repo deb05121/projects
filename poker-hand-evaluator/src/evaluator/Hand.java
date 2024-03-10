@@ -26,33 +26,23 @@ public class Hand implements Comparable<Hand> {
 
     public Hand(List<Card> cards) throws InvalidHandSizeException {
         if (cards.size() != 5) {
-
             throw new InvalidHandSizeException("Hand size must be 5");
         }
         this.cards = new ArrayList<>(cards);
         //a cardcomparator-nak átadom a frekvenciákat
         setCardFrequencyMap();
         this.cards.sort(new CardComparator(this));
-        setIsFlush();
-
         evaluateHand();
-    }
-
-    private void setIsFlush() {
-        //5 db ugyanolyan színű lap van-e
-        boolean isFlush = isFlush();
     }
 
     private void setCardFrequencyMap() {
         for (Card card : cards) {
-
             CardValue cardValue = card.getCardValue();
             if (cardFrequencies.containsKey(cardValue)) {
                 cardFrequencies.put(cardValue, cardFrequencies.get(cardValue) + 1);
             } else {
                 cardFrequencies.put(cardValue, 1);
             }
-
         }
     }
 
@@ -168,8 +158,6 @@ public class Hand implements Comparable<Hand> {
     public int compareTo(Hand other) {
 
         if (this.handValue.ordinal() != other.handValue.ordinal()) {
-            //System.out.printf("\nhand 1: %s hand 2: %s%n", this.handValue, other.handValue);
-            //System.out.printf("\ncompareto result: %s%n", this.handValue.compareTo(other.handValue));
             return this.handValue.compareTo(other.handValue);
         }
 

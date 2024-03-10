@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Player {
     private final String name;
-    private final List<Card> playerCardList;
+    private List<Card> playerCardList;
 
 
     public Player(String name) {
@@ -25,28 +25,16 @@ public class Player {
         setPlayerCardList(starting);
     }
 
-    public void setFlop(List<Card> flop) {
-        setPlayerCardList(flop);
+    public void delPlayerCardList(){
+        playerCardList.clear();
     }
 
-    public void setTurn(Card turn) {
-        List<Card> oneCard = List.of(turn);
-        setPlayerCardList(oneCard);
-    }
-
-    public void setRiver(Card river) {
-        List<Card> oneCard = List.of(river);
-        setPlayerCardList(oneCard);
-    }
-
-    private void setPlayerCardList(List<Card> cards) {
+    public void setPlayerCardList(List<Card> cards) {
         this.playerCardList.addAll(cards);
     }
 
     @Override
     public String toString() {
-        return this.name + "{" +
-                "playCardList=" + playerCardList +
-                '}';
+        return this.name;
     }
 }
