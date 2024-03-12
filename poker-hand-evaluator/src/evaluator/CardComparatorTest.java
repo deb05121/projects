@@ -63,8 +63,7 @@ public class CardComparatorTest {
         );
 
     }
-
-    //TODO: testutils --> provide-olom ezeket a hand-eket
+    
     private Hand providePoker() throws InvalidHandSizeException {
         return new Hand(List.of(
                 new Card(CardColour.CLUBS, CardValue.TWO),

@@ -17,4 +17,8 @@ public class CardsOnTheTable {
     public static List<Card> getDesk() {
         return desk;
     }
+
+    public static void clearDesk(){
+        desk.clear();
+    }
 }
